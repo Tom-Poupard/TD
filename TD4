@@ -1,1 +1,129 @@
 
+dates = ["4th January", "5th January", "6th January", "7th January", "8th January"]
+stock_prices = [155, 156, 153, 157, 152]
+
+def stock_trend(prices):
+    trend = "stable"
+    for i in range(1, len(prices)): # len(prices) = 5 
+        if prices[i] > prices[i - 1]: #if price this year is superior than price precedent year
+            if trend == "decreasing": 
+                trend = "unstable"
+            else:
+                trend = "increasing"
+        elif prices[i] < prices[i - 1]: #if price this year is lower than price precedent year
+            if trend == "increasing":
+                trend = "unstable"
+            else:
+                trend = "decreasing"
+    return trend
+
+price_trend = stock_trend(stock_prices) #Calculate the stock price trend for your data
+
+if price_trend == "increasing":
+    print("The stock prices are generally increasing.")
+elif price_trend == "decreasing":
+    print("The stock prices are generally decreasing.")
+else:
+    print("The stock prices are generally stable.")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+dates = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+stock_prices = [150, 152, 151, 153, 152]
+
+import statistics
+def calculate_volatility(prices):
+    return statistics.stdev(prices)
+volatility = calculate_volatility(stock_prices)
+print(f"Volatility: ${volatility}")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+dates = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+stock_prices = [150, 152, 151, 153, 152]
+
+def calculate_average(prices): #function for the mean of the prices of the stocks 
+    return sum(prices) / len(prices)
+
+def highlight_above_average_days(dates, prices): #function to find stock prices above the mean
+    average_price = calculate_average(prices)
+    above_average_days = [date for date, price in zip(dates, prices) if price > average_price] # list where we find the days where stocks are above the average 
+    
+    return average_price, above_average_days # we return a tuple with the average price and days where it was the case
+
+average_price, above_average_days = highlight_above_average_days(dates, stock_prices)
+
+print(f"Average Stock Price: ${average_price}")
+print("Days with Stock Price above Average:")
+for day in above_average_days:
+
+------------------------------------------------------------------------------------------------------------------------------
+
+def forecast_next_day_price(prices):
+    if len(prices) < 2:
+        return None  # Not enough data to forecast
+
+    daily_changes = [prices[i] - prices[i - 1] for i in range(1, len(prices))]
+    average_change = sum(daily_changes) / len(daily_changes)
+
+    # Estimate the next day's price
+    last_price = prices[-1]
+    next_day_forecast = last_price + average_change
+
+    return next_day_forecast
+
+# Given the stock prices from your example
+new_prices = [150, 152, 151, 153, 152]
+next_day_forecast = forecast_next_day_price(new_prices)
+
+if next_day_forecast is not None:
+    print(f"Forecasted Next Day's Stock Price: ${next_day_forecast:.2f}")
+else:
+    print("Insufficient data to make a forecast.")
+    print(day)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+#Present Value
+def present_value(fv, r, n):
+    return fv / (1 + r)**n
+
+FV = 110
+r = 0.1
+n=3
+
+PV = present_value(FV, r, n)
+print(f"The present value is: ${PV:.2f}")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+def present_value(fv, r, n):
+    return fv / (1 + r)**n
+
+FV = 500 
+r = 0.06 
+n=2
+PV = present_value(FV, r, n)
+print(f"The present value is: ${PV:.2f}")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+def future_value(pv, r, n):
+    return pv * (1 + r)**n
+
+PV = 90 
+r = 0.07 
+n=1
+FV = future_value(PV, r, n)
+print(f"The future value is: ${FV:.2f}")
+
+------------------------------------------------------------------------------------------------------------------------------
+
+def compound(pv, r):
+    return pv * (1 + r)
+PV = 80 
+r = 0.09
+FV = compound(PV, r)
+print(f"After one year with a 9% interest rate, you’ll have: ${FV:.2f}")
