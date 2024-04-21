@@ -8,7 +8,6 @@ OpeningPrice = 142.7 #floating
     VolumeShares = 1200000 #integer
 print(Stock, OpeningPrice, ClosingPrice, VolumeShares) 
 
-
 -----------------------
 
 #Basic Data Types bis
