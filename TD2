@@ -27,8 +27,6 @@ print(stocks)
 
 -----------------------
 
-#Stock dictionary --> colelction of key-value pairs
-
 stock_details = {
          "ticker": "AAPL",
          "opening_price": 142.7,
