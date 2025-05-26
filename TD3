@@ -1,15 +1,15 @@
 #Exemple de cours
-class Bond : # Bond est une class --> class regroupe des méthodes et attributs
+class Bond : 
 
-    def __init__(self, par_value, coupon_rate, maturity): #par_value, coupon_rate et maturity sont des attibutes
-        self.par_value = par_value # par_value = argument (what we find in the object ten_year_note). We assign this argument to the attribute "par_value"
+    def __init__(self, par_value, coupon_rate, maturity):
+        self.par_value = par_value
         self.coupon_rate = coupon_rate
         self.maturity = maturity
 
-    def current_yield(self, market_price): # __init__ et current_yeild sont 2 méthodes d'inititalisation et de calcul de rendement
+    def current_yield(self, market_price):
         return (self.coupon_rate * self.par_value) / market_price
 
-ten_year_note = Bond(1000, 0.025, 10) #ten_year_note est un objet --> objet = créer à partir de class
+ten_year_note = Bond(1000, 0.025, 10)
 yield_on_note = ten_year_note.current_yield(950)
 print(yield_on_note)
 
