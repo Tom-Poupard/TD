@@ -75,7 +75,7 @@ class CurrencyConverter:
 
     def convert(self, amount, source_currency, target_currency):
         if (source_currency, target_currency) in self.conversion_rates: #Is the pair in the dictionary self.conversion_rates ? 
-            rate = self.conversion_rates[(source_currency, target_currency)] # we extract the rate of the currency pairs
+            rate = self.conversion_rates[(source_currency, target_currency)]
             converted_amount = amount * rate
             return converted_amount
         else:# Conversion is not possible
