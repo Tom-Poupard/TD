@@ -48,7 +48,7 @@ class Portfolio:
     def total_value(self):
         total_value = 0
         for name, stock in self.instruments.items(): #In the dictionary self.instruments, at every iteration, stock takes the value of the object Stock
-            total_value += stock.current_price # we add the current price of the instrument in the total_value
+            total_value += stock.current_price
         return total_value
 
 # Example usage:
