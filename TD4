@@ -10,7 +10,7 @@ def stock_trend(prices):
                 trend = "unstable"
             else:
                 trend = "increasing"
-        elif prices[i] < prices[i - 1]: #if price this year is lower than price precedent year
+        elif prices[i] < prices[i - 1]:
             if trend == "increasing":
                 trend = "unstable"
             else:
