@@ -182,7 +182,7 @@ stock_prices2 = [107, 108, 107, 107, 106, 108, 109, 108, 109, 110]
 plt.plot(stock_prices1, label = "Stock 1", color = 'red') #creation of a lin plot using data in stock_prices list
 plt.plot(stock_prices2, label = "Stock 2", color = 'blue')
 
-plt.title('Stock Prices 1 & 2 Over 10 Days') #graph title
+plt.title('Stock Prices 1 & 2 Over 10 Days')
 plt.xlabel('Days') #abscissa
 plt.ylabel('Stock Price')#ordinate
 plt.legend() #legend to identify them
