@@ -1,5 +1,4 @@
 #TD2
-
 #Basic Data Types
 
 Stock = "AAPL"
@@ -22,7 +21,7 @@ print(str('Cela fait : '), CurrencyPair, BuyRate, SellRate)
 #Add 2 elements to a list 
 
 stocks = ["AAPL", "MSFT", "GOOGL"]
-stocks.extend(["IBM", "NvDA"])  #or 2 times stocks.append()
+stocks.extend(["IBM", "NVDA"])  #or 2 times stocks.append()
 print(stocks)
 
 -----------------------
