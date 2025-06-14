@@ -126,4 +126,4 @@ def compound(pv, r):
 PV = 80 
 r = 0.09
 FV = compound(PV, r)
-print(f"After one year with a 9% interest rate, you’ll have: ${FV:.2f}")
+print(f"After one year with a {r*100}% interest rate, you’ll have: ${FV:.2f}")
