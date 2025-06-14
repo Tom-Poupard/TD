@@ -27,11 +27,10 @@ else:
     print("The stock prices are generally stable.")
 
 ------------------------------------------------------------------------------------------------------------------------------
-
+import statistics
 dates = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 stock_prices = [150, 152, 151, 153, 152]
 
-import statistics
 def calculate_volatility(prices):
     return statistics.stdev(prices)
 volatility = calculate_volatility(stock_prices)
